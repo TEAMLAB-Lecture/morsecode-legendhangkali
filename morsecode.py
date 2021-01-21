@@ -269,7 +269,7 @@ def main():
             print(get_help_message)
             continue
         
-        if input_string == 0:
+        if input_string == '0':
             break
 
         if is_validated_english_sentence(input_string):
