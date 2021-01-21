@@ -115,7 +115,7 @@ def is_validated_morse_code(user_input):
     """
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당 또는 필요에 따라 자유로운 수정
-    result = False if re.search('[^ -.]', user_input) or len([i for i in user_input.split(' ') if i not in get_morse_code_dict().values()]) > 0 else True
+    result = False if re.search('[^ -.]', user_input) or len(''.join([i for i in user_input.split(' ') if i not in get_morse_code_dict().values()])) > 0 else True
 
     return result
     # ==================================
@@ -171,7 +171,7 @@ def decoding_character(morse_character):
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당 또는 필요에 따라 자유로운 수정
     morse_code_dict = get_morse_code_dict()
-    result = ''.join([x for x, y in morse_code_dict.items() if morse_character == y])
+    result = ''.join([x for x in morse_code_dict.keys() if morse_code_dict[x] == morse_character])
 
     return result
     # ==================================
