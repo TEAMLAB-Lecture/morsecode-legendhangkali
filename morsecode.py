@@ -253,7 +253,9 @@ def encoding_sentence(english_sentence):
     """
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당 또는 필요에 따라 자유로운 수정
-    clean_sent = get_cleaned_english_sentence(english_sentence)
+    clean_sent = get_cleaned_english_sentence(' '.join([x for x in english_sentence.split()]))
+    test = [encoding_character(c) if c != ' ' else '' for c in clean_sent]
+    print(test)
     result = ' '.join([encoding_character(c) if c != ' ' else '' for c in clean_sent])
 
     return result
